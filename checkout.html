@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Запись на курс — EduPlatform</title>
+</head>
+<body>
+
+  <header>
+    <h1>EduPlatform</h1>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="index.html">Главная</a></li>
+      <li><a href="catalog.html">Каталог курсов</a></li>
+      <li><a href="detail.html">О курсе</a></li>
+      <li><a href="collection.html">Моё расписание</a></li>
+      <li><a href="checkout.html">Запись на курс</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <h2>Запись на курс</h2>
+
+    <form action="#" method="post">
+
+      <fieldset>
+        <legend>Личные данные</legend>
+
+        <p>
+          <label for="fullname">ФИО:</label><br>
+          <input type="text" id="fullname" name="fullname"
+                 required minlength="5" maxlength="100"
+                 placeholder="Иванов Иван Иванович">
+        </p>
+
+        <p>
+          <label for="email">Email:</label><br>
+          <input type="email" id="email" name="email"
+                 required placeholder="you@example.com">
+        </p>
+
+        <p>
+          <label for="phone">Контактный телефон:</label><br>
+          <input type="tel" id="phone" name="phone"
+                 required pattern="\+7[0-9]{10}"
+                 placeholder="+79991234567"
+                 title="Формат: +7 и 10 цифр, например +79991234567">
+        </p>
+      </fieldset>
+
+      <fieldset>
+        <legend>Уровень подготовки</legend>
+
+        <p>
+          <input type="radio" id="level-beginner" name="level" value="beginner" checked>
+          <label for="level-beginner">Начинающий</label>
+        </p>
+        <p>
+          <input type="radio" id="level-middle" name="level" value="middle">
+          <label for="level-middle">Продолжающий</label>
+        </p>
+        <p>
+          <input type="radio" id="level-advanced" name="level" value="advanced">
+          <label for="level-advanced">Продвинутый</label>
+        </p>
+      </fieldset>
+
+      <fieldset>
+        <legend>Параметры обучения</legend>
+
+        <p>
+          <label for="schedule">Предпочитаемое расписание:</label><br>
+          <select id="schedule" name="schedule" required>
+            <option value="">— выберите —</option>
+            <option value="morning">Утро</option>
+            <option value="evening">Вечер</option>
+            <option value="weekend">Выходные</option>
+          </select>
+        </p>
+
+        <p>
+          <label for="start-date">Желаемая дата старта:</label><br>
+          <input type="date" id="start-date" name="start_date" required>
+        </p>
+
+        <p>
+          <label for="weeks">Планируемая длительность (недель):</label><br>
+          <input type="number" id="weeks" name="weeks"
+                 min="1" max="52" value="8" required>
+        </p>
+      </fieldset>
+
+      <fieldset>
+        <legend>Дополнительно</legend>
+
+        <p>
+          <label for="comment">Комментарий:</label><br>
+          <textarea id="comment" name="comment" rows="4" cols="40"
+                    maxlength="500"
+                    placeholder="Ваши пожелания или вопросы"></textarea>
+        </p>
+
+        <p>
+          <input type="checkbox" id="agree" name="agree" required>
+          <label for="agree">Согласен с обработкой персональных данных</label>
+        </p>
+      </fieldset>
+
+      <p>
+        <button type="submit">Записаться</button>
+      </p>
+
+    </form>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 EduPlatform.</p>
+  </footer>
+
+</body>
+</html>
