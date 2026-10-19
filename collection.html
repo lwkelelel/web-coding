@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Моё расписание — EduPlatform</title>
+</head>
+<body>
+
+  <header>
+    <h1>EduPlatform</h1>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="index.html">Главная</a></li>
+      <li><a href="catalog.html">Каталог курсов</a></li>
+      <li><a href="detail.html">О курсе</a></li>
+      <li><a href="collection.html">Моё расписание</a></li>
+      <li><a href="checkout.html">Запись на курс</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <h2>Моё расписание на неделю</h2>
+
+    <table>
+      <caption>Расписание занятий: 6–12 октября 2026</caption>
+
+      <thead>
+        <tr>
+          <th scope="col">Время</th>
+          <th scope="col">Понедельник</th>
+          <th scope="col">Вторник</th>
+          <th scope="col">Среда</th>
+          <th scope="col">Четверг</th>
+          <th scope="col">Пятница</th>
+          <th scope="col">Суббота</th>
+          <th scope="col">Воскресенье</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <!-- 09:00–10:30 -->
+        <tr>
+          <th scope="row">09:00–10:30</th>
+          <td>Python с нуля</td>
+          <td></td>
+          <td>Python с нуля</td>
+          <td></td>
+          <td>SQL для аналитика</td>
+          <td></td>
+          <td></td>
+        </tr>
+
+        <!-- 10:40–12:10 -->
+        <tr>
+          <th scope="row">10:40–12:10</th>
+          <td>Веб-разработка</td>
+          <td></td>
+          <td>Веб-разработка</td>
+          <td></td>
+          <td>SQL для аналитика</td>
+          <td></td>
+          <td></td>
+        </tr>
+
+        <!-- 12:20–13:50 -->
+        <tr>
+          <th scope="row">12:20–13:50</th>
+          <td></td>
+          <td>Python с нуля</td>
+          <td></td>
+          <td>Python с нуля</td>
+          <td></td>
+          <td>Веб-разработка</td>
+          <td></td>
+        </tr>
+
+        <!-- 14:00–15:30 -->
+        <tr>
+          <th scope="row">14:00–15:30</th>
+          <td></td>
+          <td>SQL для аналитика</td>
+          <td></td>
+          <td>SQL для аналитика</td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+
+        <!-- 15:40–17:10 -->
+        <tr>
+          <th scope="row">15:40–17:10</th>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+
+        <!-- 17:20–18:50 -->
+        <tr>
+          <th scope="row">17:20–18:50</th>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>Веб-разработка</td>
+        </tr>
+
+        <!-- 19:00–20:30 -->
+        <tr>
+          <th scope="row">19:00–20:30</th>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>Python с нуля</td>
+        </tr>
+      </tbody>
+
+      <tfoot>
+        <tr>
+          <th scope="row" colspan="2">Всего занятий за неделю:</th>
+          <td colspan="6">11 занятий</td>
+        </tr>
+      </tfoot>
+    </table>
+
+    <p>Примечание: занятия, длящиеся несколько слотов, объединяются через
+    атрибут <code>rowspan</code>. В данной сетке каждое занятие занимает один слот;
+    при необходимости более длинные занятия можно объединить.</p>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 EduPlatform.</p>
+  </footer>
+
+</body>
+</html>
