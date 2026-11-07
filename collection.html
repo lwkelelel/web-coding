@@ -1,147 +1,271 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Моё расписание — EduPlatform</title>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+          content="Расписание занятий EduPlatform">
+
+    <title>Моё расписание — EduPlatform</title>
+
+    <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
 
-  <header>
-    <h1>EduPlatform</h1>
-  </header>
+<body class="page">
 
-  <nav>
-    <ul>
-      <li><a href="index.html">Главная</a></li>
-      <li><a href="catalog.html">Каталог курсов</a></li>
-      <li><a href="detail.html">О курсе</a></li>
-      <li><a href="collection.html">Моё расписание</a></li>
-      <li><a href="checkout.html">Запись на курс</a></li>
-    </ul>
-  </nav>
+    <!-- Шапка сайта -->
+    <header class="site-header">
+        <h1 class="site-header__brand">
+            EduPlatform
+        </h1>
 
-  <main>
-    <h2>Моё расписание на неделю</h2>
+        <p class="site-header__tagline">
+            Планируйте обучение в удобное время
+        </p>
+    </header>
 
-    <table>
-      <caption>Расписание занятий: 6–12 октября 2026</caption>
+    <!-- Глобальная навигация -->
+    <nav class="site-nav" aria-label="Главная навигация">
+        <ul class="site-nav__list">
+            <li class="site-nav__item">
+                <a class="site-nav__link"
+                   href="index.html">
+                    Главная
+                </a>
+            </li>
 
-      <thead>
-        <tr>
-          <th scope="col">Время</th>
-          <th scope="col">Понедельник</th>
-          <th scope="col">Вторник</th>
-          <th scope="col">Среда</th>
-          <th scope="col">Четверг</th>
-          <th scope="col">Пятница</th>
-          <th scope="col">Суббота</th>
-          <th scope="col">Воскресенье</th>
-        </tr>
-      </thead>
+            <li class="site-nav__item">
+                <a class="site-nav__link"
+                   href="catalog.html">
+                    Каталог курсов
+                </a>
+            </li>
 
-      <tbody>
-        <!-- 09:00–10:30 -->
-        <tr>
-          <th scope="row">09:00–10:30</th>
-          <td>Python с нуля</td>
-          <td></td>
-          <td>Python с нуля</td>
-          <td></td>
-          <td>SQL для аналитика</td>
-          <td></td>
-          <td></td>
-        </tr>
+            <li class="site-nav__item">
+                <a class="site-nav__link"
+                   href="detail.html">
+                    О курсе
+                </a>
+            </li>
 
-        <!-- 10:40–12:10 -->
-        <tr>
-          <th scope="row">10:40–12:10</th>
-          <td>Веб-разработка</td>
-          <td></td>
-          <td>Веб-разработка</td>
-          <td></td>
-          <td>SQL для аналитика</td>
-          <td></td>
-          <td></td>
-        </tr>
+            <li class="site-nav__item">
+                <a class="site-nav__link site-nav__link_active"
+                   href="collection.html"
+                   aria-current="page">
+                    Моё расписание
+                </a>
+            </li>
 
-        <!-- 12:20–13:50 -->
-        <tr>
-          <th scope="row">12:20–13:50</th>
-          <td></td>
-          <td>Python с нуля</td>
-          <td></td>
-          <td>Python с нуля</td>
-          <td></td>
-          <td>Веб-разработка</td>
-          <td></td>
-        </tr>
+            <li class="site-nav__item">
+                <a class="site-nav__link"
+                   href="checkout.html">
+                    Запись на курс
+                </a>
+            </li>
+        </ul>
+    </nav>
 
-        <!-- 14:00–15:30 -->
-        <tr>
-          <th scope="row">14:00–15:30</th>
-          <td></td>
-          <td>SQL для аналитика</td>
-          <td></td>
-          <td>SQL для аналитика</td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
+    <!-- Основной контент -->
+    <main class="content">
 
-        <!-- 15:40–17:10 -->
-        <tr>
-          <th scope="row">15:40–17:10</th>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
+        <h2 class="content__title">
+            Моё расписание на неделю
+        </h2>
 
-        <!-- 17:20–18:50 -->
-        <tr>
-          <th scope="row">17:20–18:50</th>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td>Веб-разработка</td>
-        </tr>
+        <section class="content__section section">
+            <h3 class="content__subtitle">
+                Учебные занятия
+            </h3>
 
-        <!-- 19:00–20:30 -->
-        <tr>
-          <th scope="row">19:00–20:30</th>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td>Python с нуля</td>
-        </tr>
-      </tbody>
+            <!-- Таблица расписания -->
+            <table class="schedule">
 
-      <tfoot>
-        <tr>
-          <th scope="row" colspan="2">Всего занятий за неделю:</th>
-          <td colspan="6">11 занятий</td>
-        </tr>
-      </tfoot>
-    </table>
+                <caption class="schedule__caption">
+                    Расписание занятий: 6–12 октября 2026
+                </caption>
 
-    <p>Примечание: занятия, длящиеся несколько слотов, объединяются через
-    атрибут <code>rowspan</code>. В данной сетке каждое занятие занимает один слот;
-    при необходимости более длинные занятия можно объединить.</p>
-  </main>
+                <thead class="schedule__head">
+                    <tr class="schedule__row">
+                        <th class="schedule__cell schedule__cell_header"
+                            scope="col">
+                            Время
+                        </th>
+                        <th class="schedule__cell schedule__cell_header"
+                            scope="col">
+                            Понедельник
+                        </th>
+                        <th class="schedule__cell schedule__cell_header"
+                            scope="col">
+                            Вторник
+                        </th>
+                        <th class="schedule__cell schedule__cell_header"
+                            scope="col">
+                            Среда
+                        </th>
+                        <th class="schedule__cell schedule__cell_header"
+                            scope="col">
+                            Четверг
+                        </th>
+                        <th class="schedule__cell schedule__cell_header"
+                            scope="col">
+                            Пятница
+                        </th>
+                        <th class="schedule__cell schedule__cell_header"
+                            scope="col">
+                            Суббота
+                        </th>
+                        <th class="schedule__cell schedule__cell_header"
+                            scope="col">
+                            Воскресенье
+                        </th>
+                    </tr>
+                </thead>
 
-  <footer>
-    <p>&copy; 2026 EduPlatform.</p>
-  </footer>
+                <tbody class="schedule__body">
+
+                    <!-- 09:00–10:30 -->
+                    <tr class="schedule__row">
+                        <th class="schedule__cell schedule__cell_time"
+                            scope="row">09:00–10:30</th>
+                        <td class="schedule__cell schedule__cell_lesson">
+                            Python с нуля
+                        </td>
+                        <td class="schedule__cell"></td>
+                        <td class="schedule__cell schedule__cell_lesson">
+                            Python с нуля
+                        </td>
+                        <td class="schedule__cell"></td>
+                        <td class="schedule__cell schedule__cell_lesson">
+                            SQL для аналитика
+                        </td>
+                        <td class="schedule__cell"></td>
+                        <td class="schedule__cell"></td>
+                    </tr>
+
+                    <!-- 10:40–12:10 -->
+                    <tr class="schedule__row">
+                        <th class="schedule__cell schedule__cell_time"
+                            scope="row">10:40–12:10</th>
+                        <td class="schedule__cell schedule__cell_lesson">
+                            Веб-разработка
+                        </td>
+                        <td class="schedule__cell"></td>
+                        <td class="schedule__cell schedule__cell_lesson">
+                            Веб-разработка
+                        </td>
+                        <td class="schedule__cell"></td>
+                        <td class="schedule__cell schedule__cell_lesson">
+                            SQL для аналитика
+                        </td>
+                        <td class="schedule__cell"></td>
+                        <td class="schedule__cell"></td>
+                    </tr>
+
+                    <!-- 12:20–13:50 -->
+                    <tr class="schedule__row">
+                        <th class="schedule__cell schedule__cell_time"
+                            scope="row">12:20–13:50</th>
+                        <td class="schedule__cell"></td>
+                        <td class="schedule__cell schedule__cell_lesson">
+                            Python с нуля
+                        </td>
+                        <td class="schedule__cell"></td>
+                        <td class="schedule__cell schedule__cell_lesson">
+                            Python с нуля
+                        </td>
+                        <td class="schedule__cell"></td>
+                        <td class="schedule__cell schedule__cell_lesson">
+                            Веб-разработка
+                        </td>
+                        <td class="schedule__cell"></td>
+                    </tr>
+
+                    <!-- 14:00–15:30 -->
+                    <tr class="schedule__row">
+                        <th class="schedule__cell schedule__cell_time"
+                            scope="row">14:00–15:30</th>
+                        <td class="schedule__cell"></td>
+                        <td class="schedule__cell schedule__cell_lesson">
+                            SQL для аналитика
+                        </td>
+                        <td class="schedule__cell"></td>
+                        <td class="schedule__cell schedule__cell_lesson">
+                            SQL для аналитика
+                        </td>
+                        <td class="schedule__cell"></td>
+                        <td class="schedule__cell"></td>
+                        <td class="schedule__cell"></td>
+                    </tr>
+
+                    <!-- 15:40–17:10 -->
+                    <tr class="schedule__row">
+                        <th class="schedule__cell schedule__cell_time"
+                            scope="row">15:40–17:10</th>
+                        <td class="schedule__cell"></td>
+                        <td class="schedule__cell"></td>
+                        <td class="schedule__cell"></td>
+                        <td class="schedule__cell"></td>
+                        <td class="schedule__cell"></td>
+                        <td class="schedule__cell"></td>
+                        <td class="schedule__cell"></td>
+                    </tr>
+
+                    <!-- 17:20–18:50 -->
+                    <tr class="schedule__row">
+                        <th class="schedule__cell schedule__cell_time"
+                            scope="row">17:20–18:50</th>
+                        <td class="schedule__cell"></td>
+                        <td class="schedule__cell"></td>
+                        <td class="schedule__cell"></td>
+                        <td class="schedule__cell"></td>
+                        <td class="schedule__cell"></td>
+                        <td class="schedule__cell"></td>
+                        <td class="schedule__cell schedule__cell_lesson">
+                            Веб-разработка
+                        </td>
+                    </tr>
+
+                    <!-- 19:00–20:30 -->
+                    <tr class="schedule__row">
+                        <th class="schedule__cell schedule__cell_time"
+                            scope="row">19:00–20:30</th>
+                        <td class="schedule__cell"></td>
+                        <td class="schedule__cell"></td>
+                        <td class="schedule__cell"></td>
+                        <td class="schedule__cell"></td>
+                        <td class="schedule__cell"></td>
+                        <td class="schedule__cell"></td>
+                        <td class="schedule__cell schedule__cell_lesson">
+                            Python с нуля
+                        </td>
+                    </tr>
+
+                </tbody>
+
+                <tfoot class="schedule__foot">
+                    <tr class="schedule__row">
+                        <th class="schedule__cell schedule__cell_total"
+                            scope="row" colspan="2">
+                            Всего занятий за неделю:
+                        </th>
+                        <td class="schedule__cell schedule__cell_total"
+                            colspan="6">
+                            11 занятий
+                        </td>
+                    </tr>
+                </tfoot>
+            </table>
+            </section>
+    </main>
+
+    <!-- Подвал -->
+    <footer class="site-footer">
+        <p class="site-footer__text">
+            &copy; 2026 EduPlatform.
+            Все права защищены.
+        </p>
+    </footer>
 
 </body>
 </html>

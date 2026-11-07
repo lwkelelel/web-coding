@@ -1,68 +1,246 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Курс «Python с нуля» — EduPlatform</title>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+          content="Описание курса Python с нуля — EduPlatform">
+
+    <title>Python с нуля — EduPlatform</title>
+
+    <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
 
-  <header>
-    <h1>EduPlatform</h1>
-  </header>
+<body class="page">
 
-  <nav>
-    <ul>
-      <li><a href="index.html">Главная</a></li>
-      <li><a href="catalog.html">Каталог курсов</a></li>
-      <li><a href="detail.html">О курсе</a></li>
-      <li><a href="collection.html">Моё расписание</a></li>
-      <li><a href="checkout.html">Запись на курс</a></li>
-    </ul>
-  </nav>
+    <!-- Шапка сайта -->
+    <header class="site-header">
+        <h1 class="site-header__brand">
+            EduPlatform
+        </h1>
 
-  <main>
-    <article>
-      <h2>Python с нуля</h2>
+        <p class="site-header__tagline">
+            Учитесь программировать с нуля
+        </p>
+    </header>
 
-      <img src="images/course-python.jpg" alt="Обложка курса Python с нуля" width="400">
+    <!-- Глобальная навигация -->
+    <nav class="site-nav"
+         aria-label="Главная навигация">
+        <ul class="site-nav__list">
+            <li class="site-nav__item">
+                <a class="site-nav__link"
+                   href="index.html">
+                    Главная
+                </a>
+            </li>
 
-      <section>
-        <h3>Описание</h3>
-        <p>Курс для тех, кто никогда не программировал. Вы освоите синтаксис Python,
-        научитесь работать с файлами и данными, напишете несколько небольших проектов.
-        Занятия проходят онлайн, с домашними заданиями и проверкой наставником.</p>
-      </section>
+            <li class="site-nav__item">
+                <a class="site-nav__link"
+                   href="catalog.html">
+                    Каталог курсов
+                </a>
+            </li>
 
-      <section>
-        <h3>Характеристики</h3>
-        <ul>
-          <li>Длительность: 8 недель</li>
-          <li>Интенсивность: 2 занятия в неделю</li>
-          <li>Уровень: для начинающих</li>
-          <li>Формат: онлайн, вечерние группы</li>
-          <li>Стоимость: 24 000 ₽</li>
+            <li class="site-nav__item">
+                <a class="site-nav__link site-nav__link_active"
+                   href="detail.html"
+                   aria-current="page">
+                    О курсе
+                </a>
+            </li>
+
+            <li class="site-nav__item">
+                <a class="site-nav__link"
+                   href="collection.html">
+                    Моё расписание
+                </a>
+            </li>
+
+            <li class="site-nav__item">
+                <a class="site-nav__link"
+                   href="checkout.html">
+                    Запись на курс
+                </a>
+            </li>
         </ul>
-      </section>
+    </nav>
 
-      <section>
-        <h3>Программа</h3>
-        <ol>
-          <li>Введение в Python и настройка окружения</li>
-          <li>Переменные, типы данных, условия</li>
-          <li>Циклы и функции</li>
-          <li>Работа с файлами и модулями</li>
-          <li>Итоговый проект</li>
-        </ol>
-      </section>
+    <!-- Основной контент -->
+    <main class="content">
 
-      <p><a href="checkout.html">Записаться на курс</a></p>
-    </article>
-  </main>
+        <article class="course-detail">
 
-  <footer>
-    <p>&copy; 2026 EduPlatform.</p>
-  </footer>
+            <header class="course-detail__header">
+                <h2 class="content__title">
+                    Python с нуля
+                </h2>
+
+                <p class="course-detail__intro">
+                    Освойте программирование
+                    и создайте свои первые проекты.
+                </p>
+
+                <img
+                    class="course-detail__image"
+                    src="images/course-python.svg"
+                    alt="Обложка курса Python с нуля">
+            </header>
+
+            <!-- Навигация по разделам курса -->
+            <nav class="course-detail__navigation course-navigation"
+                 aria-label="Навигация по программе курса">
+
+                <p class="course-navigation__title">
+                    Программа курса
+                </p>
+
+                <ul class="course-navigation__list">
+                    <li class="course-navigation__item">
+                        <a class="course-navigation__link"
+                           href="#description">
+                            Описание
+                        </a>
+                    </li>
+
+                    <li class="course-navigation__item">
+                        <a class="course-navigation__link"
+                           href="#features">
+                            Характеристики
+                        </a>
+                    </li>
+
+                    <li class="course-navigation__item">
+                        <a class="course-navigation__link"
+                           href="#program">
+                            Программа
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- Описание курса -->
+            <section
+                class="course-detail__section section"
+                id="description">
+
+                <h3 class="content__subtitle">
+                    Описание
+                </h3>
+
+                <p class="course-detail__text">
+                    Курс предназначен для тех,
+                    кто никогда не программировал.
+                    Вы освоите синтаксис Python,
+                    научитесь работать с файлами
+                    и данными, напишете несколько
+                    небольших проектов.
+                </p>
+
+                <p class="course-detail__text">
+                    Занятия проходят онлайн,
+                    с домашними заданиями
+                    и проверкой наставником.
+                </p>
+            </section>
+
+            <!-- Характеристики -->
+            <section
+                class="course-detail__section section"
+                id="features">
+
+                <h3 class="content__subtitle">
+                    Характеристики
+                </h3>
+
+                <ul class="course-detail__list">
+                    <li class="course-detail__list-item">
+                        Длительность: 8 недель
+                    </li>
+
+                    <li class="course-detail__list-item">
+                        Интенсивность:
+                        2 занятия в неделю
+                    </li>
+
+                    <li class="course-detail__list-item">
+                        Уровень: для начинающих
+                    </li>
+
+                    <li class="course-detail__list-item">
+                        Формат: онлайн,
+                        вечерние группы
+                    </li>
+
+                    <li class="course-detail__list-item">
+                        Стоимость: 24 000 ₽
+                    </li>
+                </ul>
+            </section>
+
+            <!-- Программа обучения -->
+            <section
+                class="course-detail__section section"
+                id="program">
+
+                <h3 class="content__subtitle">
+                    Программа обучения
+                </h3>
+
+                <ol class="course-detail__list">
+                    <li class="course-detail__list-item">
+                        Введение в Python
+                        и настройка окружения
+                    </li>
+
+                    <li class="course-detail__list-item">
+                        Переменные, типы данных,
+                        условия
+                    </li>
+
+                    <li class="course-detail__list-item">
+                        Циклы и функции
+                    </li>
+
+                    <li class="course-detail__list-item">
+                        Работа с файлами и модулями
+                    </li>
+
+                    <li class="course-detail__list-item">
+                        Итоговый проект
+                    </li>
+                </ol>
+            </section>
+
+            <!-- Запись на курс -->
+            <section class="course-detail__section section">
+                <h3 class="content__subtitle">
+                    Начните обучение
+                </h3>
+
+                <p class="course-detail__text">
+                    Выберите удобное расписание
+                    и оставьте заявку на обучение.
+                </p>
+
+                <a
+                    class="section__button button button_primary"
+                    href="checkout.html">
+                    Записаться на курс
+                </a>
+            </section>
+
+        </article>
+    </main>
+
+    <!-- Подвал сайта -->
+    <footer class="site-footer">
+        <p class="site-footer__text">
+            &copy; 2026 EduPlatform.
+            Все права защищены.
+        </p>
+    </footer>
 
 </body>
 </html>

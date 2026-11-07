@@ -1,0 +1,11 @@
+# Зависимости Node.js
+node_modules/
+
+# Кэш Sass
+.sass-cache/
+
+# Виртуальное окружение Python
+.venv/
+
+# Настройки PyCharm
+.idea/

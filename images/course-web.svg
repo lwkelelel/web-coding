@@ -1,0 +1,11 @@
+
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="450" viewBox="0 0 800 450">
+  <rect width="800" height="450" rx="28" fill="#174b65"></rect>
+  <circle cx="700" cy="85" r="140" fill="#1f7895" opacity="0.7"></circle>
+  <circle cx="100" cy="400" r="150" fill="#40b8bd" opacity="0.25"></circle>
+  <text x="60" y="105" font-family="Arial" font-size="25" fill="#c8f4f8">EDUPLATFORM / COURSE</text>
+  <text x="60" y="210" font-family="Arial" font-size="56" font-weight="bold" fill="white">Веб-разработка</text>
+  <text x="63" y="277" font-family="Arial" font-size="33" fill="#e0faff">HTML / CSS / JavaScript</text>
+  <rect x="60" y="345" width="190" height="47" rx="22" fill="#f4c46c"></rect>
+  <text x="87" y="376" font-family="Arial" font-size="20" font-weight="bold" fill="#252a43">12 недель</text>
+</svg>

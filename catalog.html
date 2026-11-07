@@ -1,64 +1,186 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Каталог курсов — EduPlatform</title>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+          content="Каталог онлайн-курсов EduPlatform">
+    <title>Каталог курсов — EduPlatform</title>
+
+    <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
 
-  <header>
-    <h1>EduPlatform</h1>
-  </header>
+<body class="page">
 
-  <nav>
-    <ul>
-      <li><a href="index.html">Главная</a></li>
-      <li><a href="catalog.html">Каталог курсов</a></li>
-      <li><a href="detail.html">О курсе</a></li>
-      <li><a href="collection.html">Моё расписание</a></li>
-      <li><a href="checkout.html">Запись на курс</a></li>
-    </ul>
-  </nav>
+    <!-- Шапка сайта -->
+    <header class="site-header">
+        <h1 class="site-header__brand">
+            EduPlatform
+        </h1>
+        <p class="site-header__tagline">
+            Выберите направление для своего развития
+        </p>
+    </header>
 
-  <main>
-    <h2>Каталог курсов</h2>
+    <!-- Глобальная навигация -->
+    <nav class="site-nav" aria-label="Главная навигация">
+        <ul class="site-nav__list">
+            <li class="site-nav__item">
+                <a class="site-nav__link"
+                   href="index.html">
+                    Главная
+                </a>
+            </li>
 
-    <section>
-      <h3>Программирование</h3>
+            <li class="site-nav__item">
+                <a class="site-nav__link site-nav__link_active"
+                   href="catalog.html"
+                   aria-current="page">
+                    Каталог курсов
+                </a>
+            </li>
 
-      <article>
-        <h4>Python с нуля</h4>
-        <img src="images/course-python.jpg" alt="Логотип курса Python с нуля" width="200">
-        <p>Основы синтаксиса, работа с данными, первые проекты. 8 недель, 2 занятия в неделю.</p>
-        <p><a href="detail.html">Подробнее о курсе</a></p>
-      </article>
+            <li class="site-nav__item">
+                <a class="site-nav__link"
+                   href="detail.html">
+                    О курсе
+                </a>
+            </li>
 
-      <article>
-        <h4>Веб-разработка: HTML, CSS, JavaScript</h4>
-        <img src="images/course-web.jpg" alt="Логотип курса веб-разработки" width="200">
-        <p>От вёрстки до интерактивных страниц. 12 недель, проектная работа.</p>
-        <p><a href="detail.html">Подробнее о курсе</a></p>
-      </article>
-    </section>
+            <li class="site-nav__item">
+                <a class="site-nav__link"
+                   href="collection.html">
+                    Моё расписание
+                </a>
+            </li>
 
-    <section>
-      <h3>Аналитика данных</h3>
+            <li class="site-nav__item">
+                <a class="site-nav__link"
+                   href="checkout.html">
+                    Запись на курс
+                </a>
+            </li>
+        </ul>
+    </nav>
 
-      <article>
-        <h4>SQL для аналитика</h4>
-        <img src="images/course-sql.jpg" alt="Логотип курса SQL для аналитика" width="200">
-        <p>Запросы, агрегации, работа с большими таблицами. 6 недель.</p>
-        <p><a href="detail.html">Подробнее о курсе</a></p>
-      </article>
-    </section>
-  </main>
+    <!-- Основной контент -->
+    <main class="content">
 
-  <footer>
-    <p>&copy; 2026 EduPlatform.</p>
-  </footer>
+        <h2 class="content__title">
+            Каталог курсов
+        </h2>
 
-<!-- Каталог курсов -->
+        <p class="content__text">
+            Выбирайте интересное направление обучения.
+            Все курсы доступны в онлайн-формате.
+        </p>
+
+        <!-- Раздел программирования -->
+        <section class="content__section section">
+            <h3 class="content__subtitle">
+                Программирование
+            </h3>
+
+            <!-- Карточка Python -->
+            <article class="section__card course-card">
+                <div class="course-card__image-wrapper">
+                    <img
+                        class="course-card__image"
+                        src="images/course-python.svg"
+                        alt="Обложка курса Python с нуля">
+
+                    <span class="course-card__badge">
+                        Новинка
+                    </span>
+                </div>
+
+                <h4 class="course-card__title">
+                    Python с нуля
+                </h4>
+
+                <p class="course-card__description">
+                    Основы синтаксиса, работа с данными,
+                    первые проекты.
+                    8 недель, 2 занятия в неделю.
+                </p>
+
+                <a class="course-card__button button button_primary"
+                   href="detail.html">
+                    Подробнее о курсе
+                </a>
+            </article>
+
+            <!-- Карточка веб-разработки -->
+            <article class="section__card course-card">
+                <div class="course-card__image-wrapper">
+                    <img
+                        class="course-card__image"
+                        src="images/course-web.svg"
+                        alt="Обложка курса веб-разработки">
+
+                    <span class="course-card__badge">
+                        Новинка
+                    </span>
+                </div>
+
+                <h4 class="course-card__title">
+                    Веб-разработка: HTML, CSS, JavaScript
+                </h4>
+
+                <p class="course-card__description">
+                    От вёрстки до интерактивных страниц.
+                    12 недель, проектная работа.
+                </p>
+
+                <a class="course-card__button button button_primary"
+                   href="detail.html">
+                    Подробнее о курсе
+                </a>
+            </article>
+        </section>
+
+        <!-- Раздел аналитики -->
+        <section class="content__section section">
+            <h3 class="content__subtitle">
+                Аналитика данных
+            </h3>
+
+            <!-- Карточка SQL -->
+            <article class="section__card course-card">
+                <div class="course-card__image-wrapper">
+                    <img
+                        class="course-card__image"
+                        src="images/course-sql.svg"
+                        alt="Обложка курса SQL для аналитика">
+                </div>
+
+                <h4 class="course-card__title">
+                    SQL для аналитика
+                </h4>
+
+                <p class="course-card__description">
+                    Запросы, агрегации, работа
+                    с большими таблицами.
+                    Продолжительность — 6 недель.
+                </p>
+
+                <a class="course-card__button button button_primary"
+                   href="detail.html">
+                    Подробнее о курсе
+                </a>
+            </article>
+        </section>
+
+    </main>
+
+    <!-- Подвал -->
+    <footer class="site-footer">
+        <p class="site-footer__text">
+            &copy; 2026 EduPlatform.
+            Все права защищены.
+        </p>
+    </footer>
 
 </body>
 </html>
