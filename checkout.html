@@ -15,63 +15,74 @@
 <body class="page">
 
     <!-- Шапка сайта -->
-    <header class="site-header">
-        <h1 class="site-header__brand">
-            EduPlatform
-        </h1>
+    <header class="page__header site-header">
+        <div class="site-header__inner">
 
-        <p class="site-header__tagline">
-            Начните обучение уже сегодня
-        </p>
+            <a class="site-header__brand"
+               href="index.html">
+                EduPlatform
+            </a>
+
+            <!-- Глобальная навигация -->
+            <nav class="site-header__nav site-nav"
+                 aria-label="Главная навигация">
+
+                <ul class="site-nav__list">
+
+                    <li class="site-nav__item">
+                        <a class="site-nav__link"
+                           href="index.html">
+                            Главная
+                        </a>
+                    </li>
+
+                    <li class="site-nav__item">
+                        <a class="site-nav__link"
+                           href="catalog.html">
+                            Каталог курсов
+                        </a>
+                    </li>
+
+                    <li class="site-nav__item">
+                        <a class="site-nav__link"
+                           href="detail.html">
+                            О курсе
+                        </a>
+                    </li>
+
+                    <li class="site-nav__item">
+                        <a class="site-nav__link"
+                           href="collection.html">
+                            Моё расписание
+                        </a>
+                    </li>
+
+                    <li class="site-nav__item">
+                        <a class="site-nav__link site-nav__link_active"
+                           href="checkout.html"
+                           aria-current="page">
+                            Запись на курс
+                        </a>
+                    </li>
+
+                </ul>
+            </nav>
+
+            <!-- Кнопка записи -->
+            <a class="site-header__profile"
+               href="#enrollment-form">
+                К форме записи
+            </a>
+
+        </div>
     </header>
 
-    <!-- Глобальная навигация -->
-    <nav class="site-nav" aria-label="Главная навигация">
-        <ul class="site-nav__list">
-            <li class="site-nav__item">
-                <a class="site-nav__link"
-                   href="index.html">
-                    Главная
-                </a>
-            </li>
+    <!-- Основное содержимое -->
+    <main class="page__main content">
 
-            <li class="site-nav__item">
-                <a class="site-nav__link"
-                   href="catalog.html">
-                    Каталог курсов
-                </a>
-            </li>
-
-            <li class="site-nav__item">
-                <a class="site-nav__link"
-                   href="detail.html">
-                    О курсе
-                </a>
-            </li>
-
-            <li class="site-nav__item">
-                <a class="site-nav__link"
-                   href="collection.html">
-                    Моё расписание
-                </a>
-            </li>
-
-            <li class="site-nav__item">
-                <a class="site-nav__link site-nav__link_active"
-                   href="checkout.html"
-                   aria-current="page">
-                    Запись на курс
-                </a>
-            </li>
-        </ul>
-    </nav>
-
-    <!-- Основной контент -->
-    <main class="content">
-
-        <h2 class="content__title">
+        <h1 class="content__title">
             Запись на курс
-        </h2>
+        </h1>
 
         <p class="content__text">
             Заполните форму ниже, чтобы оставить
@@ -80,11 +91,13 @@
 
         <!-- Форма записи -->
         <form class="enrollment-form"
+              id="enrollment-form"
               action="#"
               method="post">
 
             <!-- Личные данные -->
             <fieldset class="enrollment-form__group">
+
                 <legend class="enrollment-form__legend">
                     Личные данные
                 </legend>
@@ -102,6 +115,7 @@
                            required
                            minlength="5"
                            maxlength="100"
+                           autocomplete="name"
                            placeholder="Иванов Иван Иванович">
                 </p>
 
@@ -116,28 +130,39 @@
                            id="email"
                            name="email"
                            required
+                           autocomplete="email"
                            placeholder="you@example.com">
                 </p>
 
                 <p class="enrollment-form__field">
-                    <label class="enrollment-form__label"
-                           for="phone">
-                        Контактный телефон:
-                    </label>
+    <label class="enrollment-form__label"
+           for="phone">
+        Контактный телефон:
+    </label>
 
-                    <input class="enrollment-form__input"
-                           type="tel"
-                           id="phone"
-                           name="phone"
-                           required
-                           pattern="\+7[0-9]{10}"
-                           placeholder="+79991234567"
-                           title="Формат: +7 и 10 цифр">
-                </p>
+    <input class="enrollment-form__input"
+           type="tel"
+           id="phone"
+           name="phone"
+           required
+           autocomplete="tel"
+           pattern="\+7[0-9]{10}"
+           placeholder="+79991234567"
+           aria-describedby="phone-hint">
+
+    <small class="enrollment-form__hint"
+           id="phone-hint">
+        Формат номера: +7 и 10 цифр,
+        например +79991234567.
+    </small>
+</p>
+
+
             </fieldset>
 
             <!-- Уровень подготовки -->
             <fieldset class="enrollment-form__group">
+
                 <legend class="enrollment-form__legend">
                     Уровень подготовки
                 </legend>
@@ -181,10 +206,12 @@
                         Продвинутый
                     </label>
                 </p>
+
             </fieldset>
 
             <!-- Параметры обучения -->
             <fieldset class="enrollment-form__group">
+
                 <legend class="enrollment-form__legend">
                     Параметры обучения
                 </legend>
@@ -203,22 +230,26 @@
                         <option value="">
                             — выберите —
                         </option>
+
                         <option value="morning">
                             Утро
                         </option>
+
                         <option value="evening">
                             Вечер
                         </option>
+
                         <option value="weekend">
                             Выходные
                         </option>
+
                     </select>
                 </p>
 
                 <p class="enrollment-form__field">
                     <label class="enrollment-form__label"
                            for="start-date">
-                        Желаемая дата старта:
+                        Желаемая дата начала:
                     </label>
 
                     <input class="enrollment-form__input"
@@ -231,7 +262,7 @@
                 <p class="enrollment-form__field">
                     <label class="enrollment-form__label"
                            for="weeks">
-                        Планируемая длительность (недель):
+                        Длительность обучения (недель):
                     </label>
 
                     <input class="enrollment-form__input"
@@ -243,12 +274,14 @@
                            value="8"
                            required>
                 </p>
+
             </fieldset>
 
             <!-- Дополнительная информация -->
             <fieldset class="enrollment-form__group">
+
                 <legend class="enrollment-form__legend">
-                    Дополнительно
+                    Дополнительная информация
                 </legend>
 
                 <p class="enrollment-form__field">
@@ -261,7 +294,6 @@
                               id="comment"
                               name="comment"
                               rows="4"
-                              cols="40"
                               maxlength="500"
                               placeholder="Ваши пожелания или вопросы"></textarea>
                 </p>
@@ -279,26 +311,107 @@
                         персональных данных
                     </label>
                 </p>
+
             </fieldset>
 
-            <!-- Кнопка отправки -->
+            <!-- Отправка формы -->
             <p class="enrollment-form__actions">
+
                 <button
                     class="enrollment-form__submit button button_primary"
                     type="submit">
-                    Записаться
+                    Отправить заявку
                 </button>
+
             </p>
 
         </form>
+
     </main>
 
+    <!-- Боковая панель -->
+    <aside class="page__sidebar sidebar"
+           aria-label="Информация о записи на курс">
+
+        <section class="sidebar__section">
+
+            <h2 class="sidebar__title">
+                Как записаться?
+            </h2>
+
+            <ol class="sidebar__list">
+                <li class="sidebar__item">
+                    Заполните личные данные.
+                </li>
+
+                <li class="sidebar__item">
+                    Выберите уровень подготовки.
+                </li>
+
+                <li class="sidebar__item">
+                    Укажите удобное расписание.
+                </li>
+
+                <li class="sidebar__item">
+                    Отправьте заявку.
+                </li>
+            </ol>
+
+        </section>
+
+        <section class="sidebar__section">
+
+            <h2 class="sidebar__title">
+                Преимущества обучения
+            </h2>
+
+            <ul class="sidebar__list">
+                <li class="sidebar__item">
+                    Онлайн-формат
+                </li>
+
+                <li class="sidebar__item">
+                    Практические задания
+                </li>
+
+                <li class="sidebar__item">
+                    Поддержка наставника
+                </li>
+            </ul>
+
+        </section>
+
+        <section class="sidebar__section">
+
+            <h2 class="sidebar__title">
+                Нужна помощь?
+            </h2>
+
+            <p class="sidebar__text">
+                По вопросам обучения обращайтесь:
+            </p>
+
+            <a class="sidebar__contact"
+               href="mailto:info@eduplatform.example">
+                info@eduplatform.example
+            </a>
+
+        </section>
+
+    </aside>
+
     <!-- Подвал сайта -->
-    <footer class="site-footer">
+    <footer class="page__footer site-footer">
+
         <p class="site-footer__text">
             &copy; 2026 EduPlatform.
             Все права защищены.
         </p>
+
+        <p class="site-footer__text">
+            Контакты: info@eduplatform.example
+        </p>
+
     </footer>
 
 </body>

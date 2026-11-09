@@ -6,6 +6,7 @@
           content="width=device-width, initial-scale=1.0">
     <meta name="description"
           content="EduPlatform — платформа онлайн-образования">
+
     <title>EduPlatform — онлайн-образование</title>
 
     <link rel="stylesheet" href="css/style.css">
@@ -14,64 +15,73 @@
 <body class="page">
 
     <!-- Шапка сайта -->
-    <header class="site-header">
-        <h1 class="site-header__brand">
-            EduPlatform
-        </h1>
-        <p class="site-header__tagline">
-            Платформа онлайн-образования:
-            учитесь в удобное время
-        </p>
+    <header class="page__header site-header">
+        <div class="site-header__inner">
+
+            <a class="site-header__brand"
+               href="index.html">
+                EduPlatform
+            </a>
+
+            <nav class="site-header__nav site-nav"
+                 aria-label="Главная навигация">
+
+                <ul class="site-nav__list">
+                    <li class="site-nav__item">
+                        <a class="site-nav__link site-nav__link_active"
+                           href="index.html"
+                           aria-current="page">
+                            Главная
+                        </a>
+                    </li>
+
+                    <li class="site-nav__item">
+                        <a class="site-nav__link"
+                           href="catalog.html">
+                            Каталог курсов
+                        </a>
+                    </li>
+
+                    <li class="site-nav__item">
+                        <a class="site-nav__link"
+                           href="detail.html">
+                            О курсе
+                        </a>
+                    </li>
+
+                    <li class="site-nav__item">
+                        <a class="site-nav__link"
+                           href="collection.html">
+                            Моё расписание
+                        </a>
+                    </li>
+
+                    <li class="site-nav__item">
+                        <a class="site-nav__link"
+                           href="checkout.html">
+                            Запись на курс
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- Профиль пользователя -->
+
+<a class="site-header__profile"
+   href="checkout.html">
+    Записаться
+</a>
+
+        </div>
     </header>
 
-    <!-- Глобальная навигация -->
-    <nav class="site-nav" aria-label="Главная навигация">
-        <ul class="site-nav__list">
-            <li class="site-nav__item">
-                <a class="site-nav__link site-nav__link_active"
-                   href="index.html" aria-current="page">
-                    Главная
-                </a>
-            </li>
-
-            <li class="site-nav__item">
-                <a class="site-nav__link"
-                   href="catalog.html">
-                    Каталог курсов
-                </a>
-            </li>
-
-            <li class="site-nav__item">
-                <a class="site-nav__link"
-                   href="detail.html">
-                    О курсе
-                </a>
-            </li>
-
-            <li class="site-nav__item">
-                <a class="site-nav__link"
-                   href="collection.html">
-                    Моё расписание
-                </a>
-            </li>
-
-            <li class="site-nav__item">
-                <a class="site-nav__link"
-                   href="checkout.html">
-                    Запись на курс
-                </a>
-            </li>
-        </ul>
-    </nav>
-
     <!-- Основное содержимое -->
-    <main class="content">
+    <main class="page__main content">
 
-        <!-- Описание платформы -->
         <section class="content__section section section_hero">
-            <h2 class="content__title">
-                О сервисе
-            </h2>
+            <h1 class="content__title">
+                Учитесь новому вместе с EduPlatform
+            </h1>
 
             <p class="content__text">
                 EduPlatform — это платформа
@@ -79,6 +89,9 @@
                 изучать программирование, дизайн,
                 аналитику данных и другие направления
                 в удобном темпе.
+            </p>
+
+            <p class="content__text">
                 Занятия ведут практикующие
                 преподаватели, а расписание
                 подстраивается под вас.
@@ -90,68 +103,101 @@
             </a>
         </section>
 
-        <!-- Преимущества платформы -->
+        <!-- Преимущества -->
         <section class="content__section section">
             <h2 class="content__subtitle">
-                Почему мы
+                Почему выбирают нас
             </h2>
 
-            <article class="section__feature feature">
-                <h3 class="feature__title">
-                    Гибкое расписание
-                </h3>
+            <div class="feature-list">
 
-                <p class="feature__description">
-                    Утренние, вечерние и выходные
-                    группы — выбирайте удобный слот.
-                </p>
-            </article>
+                <article class="feature-list__item feature">
+                    <h3 class="feature__title">
+                        Гибкое расписание
+                    </h3>
 
-            <article class="section__feature feature">
-                <h3 class="feature__title">
-                    Практика с первого дня
-                </h3>
+                    <p class="feature__description">
+                        Утренние, вечерние и выходные
+                        группы — выбирайте удобный слот.
+                    </p>
+                </article>
 
-                <p class="feature__description">
-                    Каждый курс построен вокруг
-                    реальных проектов.
-                </p>
-            </article>
+                <article class="feature-list__item feature">
+                    <h3 class="feature__title">
+                        Практика с первого дня
+                    </h3>
 
-            <article class="section__feature feature">
-                <h3 class="feature__title">
-                    Поддержка наставника
-                </h3>
+                    <p class="feature__description">
+                        Каждый курс построен вокруг
+                        реальных проектов.
+                    </p>
+                </article>
 
-                <p class="feature__description">
-                    Личный наставник отвечает
-                    на вопросы и проверяет
-                    домашние задания.
-                </p>
-            </article>
+                <article class="feature-list__item feature">
+                    <h3 class="feature__title">
+                        Поддержка наставника
+                    </h3>
+
+                    <p class="feature__description">
+                        Личный наставник отвечает
+                        на вопросы и проверяет
+                        домашние задания.
+                    </p>
+                </article>
+
+            </div>
         </section>
-
-        <!-- Информация о ближайшем наборе -->
-        <aside class="content__section section">
-            <h2 class="content__subtitle">
-                Ближайший набор
-            </h2>
-
-            <p class="content__text">
-                Старт группы по веб-разработке —
-                1 октября. Осталось 5 мест.
-            </p>
-
-            <a class="section__button button button_secondary"
-               href="checkout.html">
-                Записаться на курс
-            </a>
-        </aside>
 
     </main>
 
-    <!-- Подвал сайта -->
-    <footer class="site-footer">
+    <!-- Боковая панель -->
+    <aside class="page__sidebar sidebar"
+       aria-labelledby="sidebar-heading">
+
+
+        <section class="sidebar__section">
+            <h2 class="sidebar__title"
+                id="sidebar-heading">
+                Ближайший набор
+            </h2>
+
+
+            <p class="sidebar__text">
+                Открыта запись на курс
+                «Веб-разработка».
+            </p>
+
+            <p class="sidebar__text">
+                Количество мест ограничено.
+            </p>
+
+            <a class="sidebar__button button button_secondary"
+               href="checkout.html">
+                Записаться
+            </a>
+        </section>
+
+        <section class="sidebar__section">
+            <h2 class="sidebar__title">
+                Популярные направления
+            </h2>
+
+            <ul class="sidebar__list">
+                <li class="sidebar__item">
+                    Python
+                </li>
+                <li class="sidebar__item">
+                    Веб-разработка
+                </li>
+                <li class="sidebar__item">
+                    SQL и аналитика
+                </li>
+            </ul>
+        </section>
+    </aside>
+
+    <!-- Подвал -->
+    <footer class="page__footer site-footer">
         <p class="site-footer__text">
             &copy; 2026 EduPlatform.
             Все права защищены.

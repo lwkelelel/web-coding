@@ -511,5 +511,752 @@ html {
     white-space: normal;
   }
 }
+/* =====================================
+   МАКРОСЕТКА СТРАНИЦЫ — CSS GRID
+===================================== */
+/* Mobile First: мобильная версия */
+.page {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-areas: "header" "main" "sidebar" "footer";
+  grid-template-rows: auto 1fr auto auto;
+  min-height: 100vh;
+}
+
+/* Области макросетки */
+.page__header {
+  grid-area: header;
+}
+
+.page__main {
+  grid-area: main;
+  min-width: 0;
+  width: 100%;
+}
+
+.page__sidebar {
+  grid-area: sidebar;
+  min-width: 0;
+}
+
+.page__footer {
+  grid-area: footer;
+}
+
+/* Верхняя часть сайта */
+.site-header__inner {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+/* Боковая панель */
+.sidebar {
+  padding: 20px;
+  margin: 0 12px 25px;
+  background-color: #ffffff;
+  border: 1px solid #e2e7f2;
+  border-radius: 18px;
+}
+.sidebar__section {
+  margin-bottom: 22px;
+}
+.sidebar__title {
+  margin: 0 0 12px;
+  color: #4338ca;
+  font-size: 20px;
+}
+.sidebar__text {
+  margin: 0 0 12px;
+  color: #68718a;
+}
+.sidebar__list {
+  margin: 0;
+  padding-left: 20px;
+}
+.sidebar__item {
+  margin-bottom: 8px;
+}
+.sidebar__button {
+  margin-top: 12px;
+}
+
+/* Планшеты */
+@media (min-width: 768px) {
+  .page {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas: "header" "main" "sidebar" "footer";
+  }
+  .page__main {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+  .page__sidebar {
+    width: calc(100% - 64px);
+    max-width: 1056px;
+    margin: 0 auto 30px;
+  }
+}
+/* Настольные мониторы */
+@media (min-width: 1200px) {
+  .page {
+    grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+    grid-template-areas: "header header" "main sidebar" "footer footer";
+    grid-template-rows: auto 1fr auto;
+    column-gap: 24px;
+  }
+  .page__main {
+    max-width: none;
+    padding-left: 5%;
+    padding-right: 0;
+  }
+  .page__sidebar {
+    width: auto;
+    max-width: none;
+    margin: 35px 5% 35px 0;
+    align-self: start;
+  }
+}
+/* =====================================
+   ЛР №3 — ШАПКА САЙТА ЧЕРЕЗ FLEXBOX
+===================================== */
+.site-header {
+  padding: 16px 5%;
+}
+.site-header__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 16px;
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+.site-header__brand {
+  display: inline-block;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 30px;
+  font-weight: 700;
+}
+.site-header__brand:hover {
+  color: #f4c46c;
+}
+.site-header__brand:focus-visible {
+  outline: 3px solid #f4c46c;
+  outline-offset: 4px;
+}
+.site-header__nav {
+  padding: 0;
+  background: transparent;
+  border: none;
+}
+.site-header__profile {
+  display: inline-block;
+  align-self: flex-start;
+  padding: 10px 18px;
+  border-radius: 10px;
+  background-color: #6366f1;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 700;
+  transition: background-color 0.3s ease;
+}
+.site-header__profile:hover {
+  background-color: #818cf8;
+}
+.site-header__profile:focus-visible {
+  outline: 3px solid #f4c46c;
+  outline-offset: 4px;
+}
+
+/* Навигационное меню через Flexbox */
+.site-nav__list {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 5px;
+}
+.site-nav__item {
+  margin: 0;
+}
+.site-nav__link {
+  display: block;
+  color: #e1e4ff;
+}
+.site-nav__link:hover {
+  color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.15);
+}
+.site-nav__link_active {
+  color: #ffffff;
+  background-color: #6366f1;
+}
+
+/* Планшеты */
+@media (min-width: 768px) {
+  .site-nav__list {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+  }
+}
+/* Компьютеры */
+@media (min-width: 1200px) {
+  .site-header__inner {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+  }
+  .site-header__nav {
+    flex: 1;
+    min-width: 0;
+  }
+  .site-header__profile {
+    align-self: center;
+    white-space: nowrap;
+  }
+  .site-nav__list {
+    justify-content: center;
+  }
+}
+/* =====================================
+   БЛОК СТОИМОСТИ КУРСА
+===================================== */
+.course-price {
+  padding: 22px;
+  border: 1px solid #d9dcff;
+  border-radius: 16px;
+  background-color: #eef0ff;
+}
+.course-price__title {
+  margin: 0 0 12px;
+  color: #252a43;
+  font-size: 21px;
+}
+.course-price__value {
+  margin: 0 0 12px;
+  color: #4338ca;
+  font-size: 32px;
+  font-weight: 700;
+}
+.course-price__description {
+  margin: 0 0 20px;
+  color: #68718a;
+  font-size: 15px;
+}
+.course-price__button {
+  display: inline-block;
+  max-width: 100%;
+}
+
+/* =====================================
+   АДАПТИВНАЯ ТАБЛИЦА
+===================================== */
+.schedule-wrapper {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  border-radius: 12px;
+}
+.schedule-wrapper:focus-visible {
+  outline: 3px solid #6366f1;
+  outline-offset: 3px;
+}
+
+.schedule {
+  min-width: 720px;
+}
+.schedule__cell {
+  padding: 12px 9px;
+  font-size: 13px;
+}
+.schedule__cell_time {
+  white-space: nowrap;
+}
+
+/* =====================================
+   СТРАНИЦА ЗАПИСИ НА КУРС
+===================================== */
+.enrollment-form {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+}
+.enrollment-form__group {
+  min-width: 0;
+}
+.enrollment-form__input, .enrollment-form__select, .enrollment-form__textarea {
+  min-width: 0;
+  max-width: 100%;
+}
+
+.sidebar__contact {
+  color: #4338ca;
+  text-decoration: underline;
+  overflow-wrap: anywhere;
+}
+.sidebar__contact:hover {
+  color: #6366f1;
+}
+.sidebar__contact:focus-visible {
+  outline: 3px solid #f4c46c;
+  outline-offset: 3px;
+}
+
+/* =====================================
+   FLEXBOX
+===================================== */
+/* 1. Карточки курсов */
+.course-card {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 14px;
+}
+.course-card__image-wrapper {
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 0;
+}
+.course-card__title {
+  margin: 0;
+}
+.course-card__description {
+  margin: 0;
+  flex-grow: 1;
+}
+.course-card__button {
+  align-self: flex-start;
+  margin-top: auto;
+}
+
+/* 2. Навигация по программе курса */
+.course-navigation__list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+.course-navigation__item {
+  margin: 0;
+}
+
+/* 3. Карточки преимуществ */
+.feature-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.feature-list__item {
+  flex: 1 1 auto;
+  min-width: 0;
+  margin: 0;
+}
+
+/* 4. Поля формы */
+.enrollment-form__group {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.enrollment-form__field {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  min-width: 0;
+  margin: 0;
+}
+.enrollment-form__label {
+  margin: 0;
+}
+.enrollment-form__input, .enrollment-form__select, .enrollment-form__textarea {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+.enrollment-form__choice {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0;
+}
+.enrollment-form__radio, .enrollment-form__checkbox {
+  flex: 0 0 auto;
+  margin: 0;
+}
+.enrollment-form__choice-label {
+  margin: 0;
+}
+.enrollment-form__actions {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 12px;
+}
+
+/* 5. Боковая панель */
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+.sidebar__section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  min-width: 0;
+  margin-bottom: 0;
+}
+.sidebar__text {
+  margin: 0;
+}
+.sidebar__button {
+  margin-top: 5px;
+}
+
+/* 6. Планшеты — от 768px */
+@media (min-width: 768px) {
+  .feature-list {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .feature-list__item {
+    flex: 1 1 220px;
+  }
+  .enrollment-form__actions {
+    justify-content: flex-end;
+  }
+}
+/* 7. Настольные компьютеры — от 1200px */
+@media (min-width: 1200px) {
+  .feature-list__item {
+    flex: 1 1 0;
+  }
+}
+/* =====================================
+   ЛАБОРАТОРНАЯ №3
+   ПУНКТ 5 — АДАПТИВНАЯ СЕТКА КАТАЛОГА
+===================================== */
+.course-catalog {
+  width: 100%;
+  min-width: 0;
+}
+.course-catalog__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr));
+  gap: 20px;
+  align-items: stretch;
+}
+.course-catalog__item {
+  min-width: 0;
+  margin: 0;
+}
+
+/* Адаптивная графика */
+.course-card__image-wrapper {
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+  border-radius: 14px;
+}
+.course-card__image {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  aspect-ratio: 16/9;
+  height: auto;
+  object-fit: cover;
+  border-radius: 14px;
+}
+
+/* ==========================================
+   ЛАБОРАТОРНАЯ №3
+   ПУНКТ 6 — MOBILE FIRST И МЕДИАЗАПРОСЫ
+========================================== */
+/* 1. БАЗОВЫЙ МАКЕТ — МОБИЛЬНЫЕ УСТРОЙСТВА */
+.page {
+  display: grid;
+  min-height: 100vh;
+  width: 100%;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-areas: "header" "main" "sidebar" "footer";
+  grid-template-rows: auto 1fr auto auto;
+  gap: 0;
+}
+
+.page__header {
+  grid-area: header;
+  min-width: 0;
+}
+
+.page__main {
+  grid-area: main;
+  width: 100%;
+  min-width: 0;
+}
+
+.page__sidebar {
+  grid-area: sidebar;
+  min-width: 0;
+}
+
+.page__footer {
+  grid-area: footer;
+}
+
+/* Основное содержимое */
+.content {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 20px 12px 30px;
+}
+.content__title {
+  font-size: 28px;
+  overflow-wrap: anywhere;
+}
+.content__subtitle {
+  font-size: 21px;
+}
+
+/* Шапка сайта */
+.site-header {
+  padding: 16px 12px;
+}
+.site-header__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 12px;
+}
+.site-header__brand {
+  font-size: 28px;
+}
+.site-header__nav {
+  width: 100%;
+  min-width: 0;
+}
+.site-header__profile {
+  align-self: flex-start;
+}
+
+/* Навигация */
+.site-nav__list {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.site-nav__item {
+  width: 100%;
+}
+.site-nav__link {
+  display: block;
+  padding: 10px 12px;
+}
+
+/* Секции и карточки */
+.section {
+  padding: 18px;
+}
+.section_hero {
+  padding: 25px 18px;
+}
+
+.course-card {
+  min-width: 0;
+  padding: 16px;
+}
+.course-card__image {
+  width: 100%;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+}
+.course-card__title {
+  font-size: 20px;
+}
+.course-card__button {
+  max-width: 100%;
+}
+
+/* Каталог */
+.course-catalog__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr));
+  gap: 16px;
+}
+
+/* Боковая панель */
+.sidebar {
+  width: auto;
+  max-width: none;
+  margin: 0 12px 24px;
+  padding: 18px;
+  align-self: stretch;
+}
+
+/* Форма записи */
+.enrollment-form {
+  width: 100%;
+  max-width: 100%;
+}
+.enrollment-form__group {
+  padding: 18px;
+}
+.enrollment-form__input, .enrollment-form__select, .enrollment-form__textarea {
+  width: 100%;
+  min-width: 0;
+}
+.enrollment-form__actions {
+  justify-content: stretch;
+}
+.enrollment-form__submit {
+  width: 100%;
+  min-width: 0;
+}
+
+/* Расписание */
+.schedule-wrapper {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+}
+
+/* ==========================================
+   2. ПЛАНШЕТЫ — ОТ 768 PX
+========================================== */
+@media (min-width: 768px) {
+  .page {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas: "header" "main" "sidebar" "footer";
+  }
+  .content {
+    padding: 32px 30px 50px;
+  }
+  .content__title {
+    font-size: 34px;
+  }
+  .content__subtitle {
+    font-size: 24px;
+  }
+  .site-header {
+    padding: 20px 30px;
+  }
+  .site-header__brand {
+    font-size: 32px;
+  }
+  .site-nav__list {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .site-nav__item {
+    width: auto;
+  }
+  .section {
+    padding: 26px;
+  }
+  .feature-list {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  .feature-list__item {
+    flex: 1 1 220px;
+  }
+  .course-card {
+    padding: 22px;
+  }
+  .sidebar {
+    margin: 0 30px 30px;
+    padding: 25px;
+  }
+  .enrollment-form__group {
+    padding: 25px;
+  }
+  .enrollment-form__actions {
+    justify-content: flex-end;
+  }
+  .enrollment-form__submit {
+    width: auto;
+    min-width: 200px;
+  }
+}
+/* ==========================================
+   КОМПЬЮТЕРЫ — ОТ 1200 PX
+========================================== */
+@media (min-width: 1200px) {
+  .page {
+    grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+    grid-template-areas: "header header" "main sidebar" "footer footer";
+    grid-template-rows: auto 1fr auto;
+    column-gap: 24px;
+  }
+  .site-header {
+    padding: 18px 5%;
+  }
+  .site-header__inner {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+  }
+  .site-header__brand {
+    font-size: 30px;
+    white-space: nowrap;
+  }
+  .site-header__nav {
+    flex: 1;
+    min-width: 0;
+  }
+  .site-header__profile {
+    align-self: center;
+    white-space: nowrap;
+  }
+  .site-nav__list {
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .content {
+    max-width: none;
+    padding: 35px 0 70px 5%;
+  }
+  .content__title {
+    font-size: 36px;
+  }
+  .sidebar {
+    width: auto;
+    max-width: none;
+    margin: 35px 5% 35px 0;
+    padding: 25px;
+    align-self: start;
+  }
+  .feature-list {
+    flex-direction: row;
+  }
+  .feature-list__item {
+    flex: 1 1 0;
+  }
+  .course-catalog__grid {
+    gap: 20px;
+  }
+  .enrollment-form__submit {
+    width: auto;
+  }
+}
+/* =====================================
+   ДОСТУПНОСТЬ ФОРМЫ
+===================================== */
+.enrollment-form__hint {
+  display: block;
+  color: #555f7b;
+  font-size: 13px;
+  line-height: 1.5;
+}
 
 /*# sourceMappingURL=style.css.map */

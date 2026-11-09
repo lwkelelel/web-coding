@@ -15,67 +15,77 @@
 <body class="page">
 
     <!-- Шапка сайта -->
-    <header class="site-header">
-        <h1 class="site-header__brand">
-            EduPlatform
-        </h1>
+    <header class="page__header site-header">
+        <div class="site-header__inner">
 
-        <p class="site-header__tagline">
-            Учитесь программировать с нуля
-        </p>
+            <a class="site-header__brand"
+               href="index.html">
+                EduPlatform
+            </a>
+
+            <nav class="site-header__nav site-nav"
+                 aria-label="Главная навигация">
+
+                <ul class="site-nav__list">
+
+                    <li class="site-nav__item">
+                        <a class="site-nav__link"
+                           href="index.html">
+                            Главная
+                        </a>
+                    </li>
+
+                    <li class="site-nav__item">
+                        <a class="site-nav__link"
+                           href="catalog.html">
+                            Каталог курсов
+                        </a>
+                    </li>
+
+                    <li class="site-nav__item">
+                        <a class="site-nav__link site-nav__link_active"
+                           href="detail.html"
+                           aria-current="page">
+                            О курсе
+                        </a>
+                    </li>
+
+                    <li class="site-nav__item">
+                        <a class="site-nav__link"
+                           href="collection.html">
+                            Моё расписание
+                        </a>
+                    </li>
+
+                    <li class="site-nav__item">
+                        <a class="site-nav__link"
+                           href="checkout.html">
+                            Запись на курс
+                        </a>
+                    </li>
+
+                </ul>
+            </nav>
+
+            <a class="site-header__profile"
+               href="checkout.html">
+                Записаться
+            </a>
+
+        </div>
     </header>
 
-    <!-- Глобальная навигация -->
-    <nav class="site-nav"
-         aria-label="Главная навигация">
-        <ul class="site-nav__list">
-            <li class="site-nav__item">
-                <a class="site-nav__link"
-                   href="index.html">
-                    Главная
-                </a>
-            </li>
-
-            <li class="site-nav__item">
-                <a class="site-nav__link"
-                   href="catalog.html">
-                    Каталог курсов
-                </a>
-            </li>
-
-            <li class="site-nav__item">
-                <a class="site-nav__link site-nav__link_active"
-                   href="detail.html"
-                   aria-current="page">
-                    О курсе
-                </a>
-            </li>
-
-            <li class="site-nav__item">
-                <a class="site-nav__link"
-                   href="collection.html">
-                    Моё расписание
-                </a>
-            </li>
-
-            <li class="site-nav__item">
-                <a class="site-nav__link"
-                   href="checkout.html">
-                    Запись на курс
-                </a>
-            </li>
-        </ul>
-    </nav>
-
-    <!-- Основной контент -->
-    <main class="content">
+    <!-- Основная информация о курсе -->
+    <main class="page__main content">
 
         <article class="course-detail">
 
+            <!-- Название и обложка -->
             <header class="course-detail__header">
-                <h2 class="content__title">
+
+                <h1 class="content__title">
                     Python с нуля
-                </h2>
+                </h1>
 
                 <p class="course-detail__intro">
                     Освойте программирование
@@ -86,9 +96,10 @@
                     class="course-detail__image"
                     src="images/course-python.svg"
                     alt="Обложка курса Python с нуля">
+
             </header>
 
-            <!-- Навигация по разделам курса -->
+            <!-- Прилипающая навигация -->
             <nav class="course-detail__navigation course-navigation"
                  aria-label="Навигация по программе курса">
 
@@ -97,6 +108,7 @@
                 </p>
 
                 <ul class="course-navigation__list">
+
                     <li class="course-navigation__item">
                         <a class="course-navigation__link"
                            href="#description">
@@ -117,6 +129,7 @@
                             Программа
                         </a>
                     </li>
+
                 </ul>
             </nav>
 
@@ -125,9 +138,9 @@
                 class="course-detail__section section"
                 id="description">
 
-                <h3 class="content__subtitle">
+                <h2 class="content__subtitle">
                     Описание
-                </h3>
+                </h2>
 
                 <p class="course-detail__text">
                     Курс предназначен для тех,
@@ -150,11 +163,12 @@
                 class="course-detail__section section"
                 id="features">
 
-                <h3 class="content__subtitle">
+                <h2 class="content__subtitle">
                     Характеристики
-                </h3>
+                </h2>
 
                 <ul class="course-detail__list">
+
                     <li class="course-detail__list-item">
                         Длительность: 8 недель
                     </li>
@@ -176,6 +190,7 @@
                     <li class="course-detail__list-item">
                         Стоимость: 24 000 ₽
                     </li>
+
                 </ul>
             </section>
 
@@ -184,11 +199,12 @@
                 class="course-detail__section section"
                 id="program">
 
-                <h3 class="content__subtitle">
+                <h2 class="content__subtitle">
                     Программа обучения
-                </h3>
+                </h2>
 
                 <ol class="course-detail__list">
+
                     <li class="course-detail__list-item">
                         Введение в Python
                         и настройка окружения
@@ -210,36 +226,72 @@
                     <li class="course-detail__list-item">
                         Итоговый проект
                     </li>
+
                 </ol>
             </section>
 
-            <!-- Запись на курс -->
-            <section class="course-detail__section section">
-                <h3 class="content__subtitle">
-                    Начните обучение
-                </h3>
-
-                <p class="course-detail__text">
-                    Выберите удобное расписание
-                    и оставьте заявку на обучение.
-                </p>
-
-                <a
-                    class="section__button button button_primary"
-                    href="checkout.html">
-                    Записаться на курс
-                </a>
-            </section>
-
         </article>
+
     </main>
 
-    <!-- Подвал сайта -->
-    <footer class="site-footer">
+    <!-- Боковая панель: цена и запись -->
+    <aside class="page__sidebar sidebar"
+       aria-labelledby="course-price-heading">
+
+
+        <section class="sidebar__section course-price">
+
+            <h2 class="course-price__title"
+                id="course-price-heading">
+                Стоимость курса
+            </h2>
+
+            <p class="course-price__value">
+                24 000 ₽
+            </p>
+
+            <p class="course-price__description">
+                Полная стоимость обучения
+                продолжительностью 8 недель.
+            </p>
+
+            <a class="course-price__button button button_primary"
+               href="checkout.html">
+                Записаться на курс
+            </a>
+
+        </section>
+
+        <section class="sidebar__section">
+
+            <h2 class="sidebar__title">
+                Формат обучения
+            </h2>
+
+            <ul class="sidebar__list">
+                <li class="sidebar__item">
+                    Онлайн-занятия
+                </li>
+                <li class="sidebar__item">
+                    Практические задания
+                </li>
+                <li class="sidebar__item">
+                    Поддержка наставника
+                </li>
+            </ul>
+
+        </section>
+
+    </aside>
+
+    <!-- Подвал -->
+    <footer class="page__footer site-footer">
+
         <p class="site-footer__text">
             &copy; 2026 EduPlatform.
             Все права защищены.
         </p>
+
     </footer>
 
 </body>
