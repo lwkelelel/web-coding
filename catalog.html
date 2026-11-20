@@ -10,6 +10,7 @@
     <title>Каталог курсов — EduPlatform</title>
 
     <link rel="stylesheet" href="css/style.css">
+    <script src="js/main.js" defer></script>
 </head>
 
 <body class="page">
@@ -90,124 +91,26 @@
             в онлайн-формате.
         </p>
 
+
         <!-- Общий контейнер каталога -->
-        <div class="course-catalog">
+        <section class="course-catalog">
 
-            <!-- Раздел программирования -->
-            <section class="content__section section">
+            <h2 class="content__subtitle">
+                Все курсы EduPlatform
+            </h2>
 
-                <h2 class="content__subtitle">
-                    Программирование
-                </h2>
+            <p class="content__text">
+                Ознакомьтесь с доступными образовательными
+                программами и выберите подходящий курс.
+            </p>
 
-                <div class="course-catalog__grid">
+            <!-- Пустой контейнер для карточек из JavaScript -->
+            <div class="course-catalog__grid"
+                 id="catalog-container">
+            </div>
 
-                    <!-- Карточка Python -->
-                    <article class="course-catalog__item course-card">
+        </section>
 
-                        <div class="course-card__image-wrapper">
-                            <img
-                                class="course-card__image"
-                                src="images/course-python.svg"
-                                alt="Обложка курса Python с нуля">
-
-                            <span class="course-card__badge">
-                                Новинка
-                            </span>
-                        </div>
-
-                        <h3 class="course-card__title">
-                            Python с нуля
-                        </h3>
-
-                        <p class="course-card__description">
-                            Основы синтаксиса,
-                            работа с данными,
-                            первые проекты.
-                            Продолжительность — 8 недель,
-                            2 занятия в неделю.
-                        </p>
-
-                        <a class="course-card__button button button_primary"
-                           href="detail.html?course=python">
-                            Подробнее о курсе
-                        </a>
-                    </article>
-
-                    <!-- Карточка веб-разработки -->
-                    <article class="course-catalog__item course-card">
-
-                        <div class="course-card__image-wrapper">
-                            <img
-                                class="course-card__image"
-                                src="images/course-web.svg"
-                                alt="Обложка курса веб-разработки">
-
-                            <span class="course-card__badge">
-                                Новинка
-                            </span>
-                        </div>
-
-                        <h3 class="course-card__title">
-                            Веб-разработка: HTML, CSS, JavaScript
-                        </h3>
-
-                        <p class="course-card__description">
-                            От вёрстки до создания
-                            интерактивных веб-страниц.
-                            Продолжительность — 12 недель.
-                            Проектная работа.
-                        </p>
-
-                        <a class="course-card__button button button_primary"
-                           href="detail.html?course=web">
-                            Подробнее о курсе
-                        </a>
-                    </article>
-
-                </div>
-            </section>
-
-            <!-- Раздел аналитики данных -->
-            <section class="content__section section">
-
-                <h2 class="content__subtitle">
-                    Аналитика данных
-                </h2>
-
-                <div class="course-catalog__grid">
-
-                    <!-- Карточка SQL -->
-                    <article class="course-catalog__item course-card">
-
-                        <div class="course-card__image-wrapper">
-                            <img
-                                class="course-card__image"
-                                src="images/course-sql.svg"
-                                alt="Обложка курса SQL для аналитика">
-                        </div>
-
-                        <h3 class="course-card__title">
-                            SQL для аналитика
-                        </h3>
-
-                        <p class="course-card__description">
-                            SQL-запросы, агрегации,
-                            работа с таблицами
-                            и анализ данных.
-                            Продолжительность — 6 недель.
-                        </p>
-
-                        <a class="course-card__button button button_primary"
-                           href="detail.html?course=sql">
-                            Подробнее о курсе
-                        </a>
-                    </article>
-
-                </div>
-            </section>
-
-        </div>
     </main>
 
     <!-- Боковая панель -->
