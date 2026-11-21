@@ -12,7 +12,7 @@ class Course {
         this.isNew = isNew;
     }
 
-    render() {
+    render(isFavorite = false) {
         // Создаём корневой элемент карточки
         const card = document.createElement("article");
         card.className = "course-catalog__item course-card";
@@ -85,6 +85,12 @@ class Course {
         description.textContent =
         `${this.teacher} · ${this.level} · ${this.hours} ч. обучения`;
 
+        const favoriteButton = document.createElement("button");
+        favoriteButton.type = "button";
+        favoriteButton.className = "course-card__button button";
+        favoriteButton.dataset.favorite = "";
+        updateFavoriteButton(favoriteButton, isFavorite);
+
         content.append(
             title,
             description,
@@ -92,7 +98,8 @@ class Course {
             level,
             hours,
             price,
-            link
+            link,
+            favoriteButton
         );
 
         card.append(imageWrapper, content);
@@ -304,28 +311,17 @@ function renderCatalog(container, courseData) {
         );
 
         // Метод render() возвращает HTML-элемент карточки
-        const card = course.render();
+        const card = course.render(favoriteIds.includes(String(course.id)));
 
         // Добавляем карточку во временный фрагмент
         fragment.append(card);
     });
 
     // Добавляем все готовые карточки на страницу
-    container.append(fragment);
+    container.replaceChildren(fragment);
 
     console.log(`В каталог добавлено ${courseData.length} курсов.`);
 }
-
-// Проверяем, существует ли контейнер на текущей странице
-if (catalogContainer !== null) {
-    console.log("Контейнер каталога успешно найден.");
-
-    // Запускаем отрисовку 15 карточек
-    renderCatalog(catalogContainer, coursesData);
-} else {
-    console.log("На текущей странице контейнер каталога отсутствует.");
-}
-
 
 // Пункт 8. Аналитика курсов (вариант №3)
 
@@ -363,3 +359,106 @@ console.log(
     totalCourseHours,
     "часов"
 );
+
+// Лабораторная работа №5
+function readList(key) {
+    try {
+        const value = JSON.parse(localStorage.getItem(key));
+        return Array.isArray(value) ? value : [];
+    } catch {
+        return [];
+    }
+}
+
+function saveList(key, items) {
+    try {
+        localStorage.setItem(key, JSON.stringify(items));
+        return true;
+    } catch {
+        return false;
+    }
+}
+
+const favoriteKey = "eduPlatform.favorites";
+const enrollmentKey = "eduPlatform.enrollments";
+const coursesById = new Map(coursesData.map(course => [String(course.id), course]));
+let favoriteIds = readList(favoriteKey);
+
+function updateFavoriteButton(button, isFavorite) {
+    button.setAttribute("aria-pressed", String(isFavorite));
+    button.classList.toggle("button_primary", isFavorite);
+    button.textContent = isFavorite ? "В избранном" : "В избранное";
+}
+
+if (catalogContainer) {
+    renderCatalog(catalogContainer, coursesData);
+    catalogContainer.addEventListener("click", event => {
+        const button = event.target.closest("button[data-favorite]");
+        const card = button?.closest(".course-card[data-id]");
+        if (!card || !catalogContainer.contains(card)) return;
+
+        const id = card.dataset.id;
+        const storedIds = readList(favoriteKey);
+        const isFavorite = !storedIds.includes(id);
+        const nextIds = isFavorite ? [...storedIds, id] : storedIds.filter(savedId => savedId !== id);
+        const status = document.querySelector("#favorite-status");
+        if (!saveList(favoriteKey, nextIds)) {
+            status.textContent = "Не удалось сохранить избранное.";
+            return;
+        }
+        favoriteIds = nextIds;
+        status.textContent = "";
+        updateFavoriteButton(button, isFavorite);
+    });
+}
+
+const requestedCourse = new URLSearchParams(location.search).get("course");
+if (location.pathname.endsWith("/detail.html") && coursesById.has(requestedCourse)) {
+    document.querySelectorAll('a[href="checkout.html"]').forEach(link => {
+        link.href = `checkout.html?course=${encodeURIComponent(requestedCourse)}`;
+    });
+}
+
+const enrollmentForm = document.querySelector("#enrollment-form");
+if (enrollmentForm) {
+    const courseSelect = enrollmentForm.elements.namedItem("courseId");
+    const status = document.querySelector("#enrollment-status");
+    coursesById.forEach((course, id) => courseSelect.add(new Option(course.title, id)));
+    if (coursesById.has(requestedCourse)) courseSelect.value = requestedCourse;
+
+    enrollmentForm.addEventListener("submit", event => {
+        event.preventDefault();
+        const fields = Object.fromEntries(new FormData(enrollmentForm));
+        if (!coursesById.has(fields.courseId)) return;
+
+        const enrollment = {
+            ...fields,
+            weeks: Number(fields.weeks),
+            agree: enrollmentForm.elements.namedItem("agree").checked
+        };
+        const enrollments = [...readList(enrollmentKey), enrollment];
+        if (!saveList(enrollmentKey, enrollments)) {
+            status.textContent = "Не удалось сохранить заявку. Попробуйте ещё раз.";
+            return;
+        }
+        enrollmentForm.reset();
+        if (coursesById.has(requestedCourse)) courseSelect.value = requestedCourse;
+        status.textContent = "Заявка сохранена. Запись доступна в разделе «Моё расписание».";
+    });
+}
+
+const enrollmentList = document.querySelector("#enrollment-list");
+if (enrollmentList) {
+    const enrollments = readList(enrollmentKey);
+    const items = enrollments.filter(enrollment => enrollment && coursesById.has(enrollment.courseId))
+        .map(enrollment => {
+            const item = document.createElement("li");
+            const course = coursesById.get(enrollment.courseId);
+            const schedules = { morning: "утро", evening: "вечер", weekend: "выходные" };
+            item.textContent = `${course.title} · ${enrollment.fullname} · ${enrollment.start_date} · ${schedules[enrollment.schedule] ?? enrollment.schedule} · ${enrollment.weeks} нед.`;
+            return item;
+        });
+    enrollmentList.replaceChildren(...items);
+    enrollmentList.hidden = items.length === 0;
+    document.querySelector("#enrollment-empty").hidden = items.length > 0;
+}
