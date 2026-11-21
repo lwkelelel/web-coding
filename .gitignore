@@ -9,3 +9,7 @@ node_modules/
 
 # Настройки PyCharm
 .idea/
+
+# Результат сборки Vite и рабочие данные сервера
+dist/
+db.local.json

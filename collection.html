@@ -9,8 +9,8 @@
 
     <title>Моё расписание — EduPlatform</title>
 
-    <link rel="stylesheet" href="css/style.css">
-    <script src="js/main.js" defer></script>
+    <link rel="stylesheet" href="/scss/style.scss">
+    <script type="module" src="/src/main.js"></script>
 </head>
 
 <body class="page">
@@ -85,7 +85,8 @@
 
         <section class="content__section section">
             <h2 class="content__subtitle">Мои заявки на курсы</h2>
-            <p id="enrollment-empty">Заявок пока нет.</p>
+            <p id="schedule-status" role="status"></p>
+            <p id="enrollment-empty" hidden>Заявок пока нет.</p>
             <ul id="enrollment-list" hidden></ul>
         </section>
 

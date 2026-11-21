@@ -2,13 +2,14 @@
   "name": "pythonproject3",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
-
-"scripts": {
-  "build:css": "sass scss/style.scss css/style.css",
-  "watch:css": "sass --watch scss/style.scss:css/style.css"
-}
-,
+  "scripts": {
+    "build:css": "sass scss/style.scss css/style.css",
+    "watch:css": "sass --watch scss/style.scss:css/style.css",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "api": "node scripts/start-api.js"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/lwkelelel/web-coding.git"
@@ -16,12 +17,14 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
+  "type": "module",
   "bugs": {
     "url": "https://github.com/lwkelelel/web-coding/issues"
   },
   "homepage": "https://github.com/lwkelelel/web-coding#readme",
   "devDependencies": {
-    "sass": "^1.108.1"
+    "json-server": "^1.0.0-beta.15",
+    "sass": "^1.108.1",
+    "vite": "^8.3.8"
   }
 }

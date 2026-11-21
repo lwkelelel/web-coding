@@ -1,0 +1,245 @@
+{
+  "courses": [
+    {
+      "id": "1",
+      "title": "Python с нуля",
+      "teacher": "Иванов И. И.",
+      "level": "Для начинающих",
+      "price": 24000,
+      "hours": 72,
+      "image": "images/course-python.svg",
+      "isNew": true,
+      "topics": [
+        "Переменные",
+        "Условия",
+        "Циклы",
+        "Функции"
+      ]
+    },
+    {
+      "id": "2",
+      "title": "Веб-разработка: HTML и CSS",
+      "teacher": "Петрова А. С.",
+      "level": "Для начинающих",
+      "price": 21000,
+      "hours": 64,
+      "image": "images/course-web.svg",
+      "isNew": true,
+      "topics": [
+        "HTML",
+        "CSS",
+        "Flexbox",
+        "Grid"
+      ]
+    },
+    {
+      "id": "3",
+      "title": "SQL и основы баз данных",
+      "teacher": "Сидоров Д. В.",
+      "level": "Для начинающих",
+      "price": 19000,
+      "hours": 56,
+      "image": "images/course-sql.svg",
+      "isNew": false,
+      "topics": [
+        "SQL",
+        "SELECT",
+        "JOIN",
+        "Нормализация"
+      ]
+    },
+    {
+      "id": "4",
+      "title": "JavaScript с нуля",
+      "teacher": "Кузнецова Е. М.",
+      "level": "Для начинающих",
+      "price": 23000,
+      "hours": 68,
+      "image": "images/course-web.svg",
+      "isNew": true,
+      "topics": [
+        "Переменные",
+        "Функции",
+        "DOM",
+        "События"
+      ]
+    },
+    {
+      "id": "5",
+      "title": "Основы программирования на Java",
+      "teacher": "Морозов А. П.",
+      "level": "Для начинающих",
+      "price": 26000,
+      "hours": 80,
+      "image": "images/course-python.svg",
+      "isNew": false,
+      "topics": [
+        "Синтаксис",
+        "Классы",
+        "Объекты",
+        "Коллекции"
+      ]
+    },
+    {
+      "id": "6",
+      "title": "Разработка на C++",
+      "teacher": "Васильев Н. А.",
+      "level": "Продвинутый",
+      "price": 32000,
+      "hours": 96,
+      "image": "images/course-python.svg",
+      "isNew": false,
+      "topics": [
+        "Указатели",
+        "ООП",
+        "Шаблоны",
+        "STL"
+      ]
+    },
+    {
+      "id": "7",
+      "title": "React: создание интерфейсов",
+      "teacher": "Соколова М. В.",
+      "level": "Средний",
+      "price": 29000,
+      "hours": 84,
+      "image": "images/course-web.svg",
+      "isNew": true,
+      "topics": [
+        "Компоненты",
+        "Props",
+        "Hooks",
+        "Роутинг"
+      ]
+    },
+    {
+      "id": "8",
+      "title": "Python для анализа данных",
+      "teacher": "Фёдоров П. И.",
+      "level": "Средний",
+      "price": 28000,
+      "hours": 88,
+      "image": "images/course-python.svg",
+      "isNew": false,
+      "topics": [
+        "NumPy",
+        "Pandas",
+        "Matplotlib",
+        "Анализ данных"
+      ]
+    },
+    {
+      "id": "9",
+      "title": "Основы машинного обучения",
+      "teacher": "Орлова Т. С.",
+      "level": "Средний",
+      "price": 35000,
+      "hours": 100,
+      "image": "images/course-sql.svg",
+      "isNew": true,
+      "topics": [
+        "Регрессия",
+        "Классификация",
+        "Метрики",
+        "Модели"
+      ]
+    },
+    {
+      "id": "10",
+      "title": "Git и GitHub",
+      "teacher": "Николаев Р. Д.",
+      "level": "Для начинающих",
+      "price": 12000,
+      "hours": 32,
+      "image": "images/course-web.svg",
+      "isNew": false,
+      "topics": [
+        "Git",
+        "Коммиты",
+        "Ветки",
+        "Слияние"
+      ]
+    },
+    {
+      "id": "11",
+      "title": "Алгоритмы и структуры данных",
+      "teacher": "Захарова О. И.",
+      "level": "Средний",
+      "price": 27000,
+      "hours": 76,
+      "image": "images/course-python.svg",
+      "isNew": false,
+      "topics": [
+        "Массивы",
+        "Списки",
+        "Деревья",
+        "Сортировка"
+      ]
+    },
+    {
+      "id": "12",
+      "title": "Основы тестирования ПО",
+      "teacher": "Беляев С. Н.",
+      "level": "Для начинающих",
+      "price": 17000,
+      "hours": 48,
+      "image": "images/course-web.svg",
+      "isNew": true,
+      "topics": [
+        "Тест-кейсы",
+        "Баг-репорты",
+        "Проверки",
+        "Автотесты"
+      ]
+    },
+    {
+      "id": "13",
+      "title": "Проектирование баз данных",
+      "teacher": "Андреева Л. В.",
+      "level": "Средний",
+      "price": 25000,
+      "hours": 70,
+      "image": "images/course-sql.svg",
+      "isNew": false,
+      "topics": [
+        "ER-модели",
+        "Связи",
+        "Нормализация",
+        "Индексы"
+      ]
+    },
+    {
+      "id": "14",
+      "title": "Backend-разработка на Flask",
+      "teacher": "Максимов К. Е.",
+      "level": "Средний",
+      "price": 30000,
+      "hours": 90,
+      "image": "images/course-python.svg",
+      "isNew": true,
+      "topics": [
+        "Flask",
+        "Маршруты",
+        "Шаблоны",
+        "API"
+      ]
+    },
+    {
+      "id": "15",
+      "title": "Основы кибербезопасности",
+      "teacher": "Смирнова Ю. А.",
+      "level": "Для начинающих",
+      "price": 22000,
+      "hours": 60,
+      "image": "images/course-web.svg",
+      "isNew": false,
+      "topics": [
+        "Угрозы",
+        "Пароли",
+        "Шифрование",
+        "Защита данных"
+      ]
+    }
+  ],
+  "enrollments": []
+}
