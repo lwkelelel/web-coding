@@ -1,0 +1,213 @@
+<script setup>
+const course = new URLSearchParams(location.search).get('course');
+const checkout = course ? 'checkout.html?course=' + encodeURIComponent(course) : 'checkout.html';
+</script>
+<template>
+<main class="page__main content">
+
+        <article class="course-detail">
+
+            <!-- Название и обложка -->
+            <header class="course-detail__header">
+
+                <h1 class="content__title">
+                    Python с нуля
+                </h1>
+
+                <p class="course-detail__intro">
+                    Освойте программирование
+                    и создайте свои первые проекты.
+                </p>
+
+                <img
+                    class="course-detail__image"
+                    src="../../images/course-python.svg"
+                    alt="Обложка курса Python с нуля">
+
+            </header>
+
+            <!-- Прилипающая навигация -->
+            <nav class="course-detail__navigation course-navigation"
+                 aria-label="Навигация по программе курса">
+
+                <p class="course-navigation__title">
+                    Программа курса
+                </p>
+
+                <ul class="course-navigation__list">
+
+                    <li class="course-navigation__item">
+                        <a class="course-navigation__link"
+                           href="#description">
+                            Описание
+                        </a>
+                    </li>
+
+                    <li class="course-navigation__item">
+                        <a class="course-navigation__link"
+                           href="#features">
+                            Характеристики
+                        </a>
+                    </li>
+
+                    <li class="course-navigation__item">
+                        <a class="course-navigation__link"
+                           href="#program">
+                            Программа
+                        </a>
+                    </li>
+
+                </ul>
+            </nav>
+
+            <!-- Описание курса -->
+            <section
+                class="course-detail__section section"
+                id="description">
+
+                <h2 class="content__subtitle">
+                    Описание
+                </h2>
+
+                <p class="course-detail__text">
+                    Курс предназначен для тех,
+                    кто никогда не программировал.
+                    Вы освоите синтаксис Python,
+                    научитесь работать с файлами
+                    и данными, напишете несколько
+                    небольших проектов.
+                </p>
+
+                <p class="course-detail__text">
+                    Занятия проходят онлайн,
+                    с домашними заданиями
+                    и проверкой наставником.
+                </p>
+            </section>
+
+            <!-- Характеристики -->
+            <section
+                class="course-detail__section section"
+                id="features">
+
+                <h2 class="content__subtitle">
+                    Характеристики
+                </h2>
+
+                <ul class="course-detail__list">
+
+                    <li class="course-detail__list-item">
+                        Длительность: 8 недель
+                    </li>
+
+                    <li class="course-detail__list-item">
+                        Интенсивность:
+                        2 занятия в неделю
+                    </li>
+
+                    <li class="course-detail__list-item">
+                        Уровень: для начинающих
+                    </li>
+
+                    <li class="course-detail__list-item">
+                        Формат: онлайн,
+                        вечерние группы
+                    </li>
+
+                    <li class="course-detail__list-item">
+                        Стоимость: 24 000 ₽
+                    </li>
+
+                </ul>
+            </section>
+
+            <!-- Программа обучения -->
+            <section
+                class="course-detail__section section"
+                id="program">
+
+                <h2 class="content__subtitle">
+                    Программа обучения
+                </h2>
+
+                <ol class="course-detail__list">
+
+                    <li class="course-detail__list-item">
+                        Введение в Python
+                        и настройка окружения
+                    </li>
+
+                    <li class="course-detail__list-item">
+                        Переменные, типы данных,
+                        условия
+                    </li>
+
+                    <li class="course-detail__list-item">
+                        Циклы и функции
+                    </li>
+
+                    <li class="course-detail__list-item">
+                        Работа с файлами и модулями
+                    </li>
+
+                    <li class="course-detail__list-item">
+                        Итоговый проект
+                    </li>
+
+                </ol>
+            </section>
+
+        </article>
+
+    </main>
+
+    <!-- Боковая панель: цена и запись -->
+    <aside class="page__sidebar sidebar"
+       aria-labelledby="course-price-heading">
+
+
+        <section class="sidebar__section course-price">
+
+            <h2 class="course-price__title"
+                id="course-price-heading">
+                Стоимость курса
+            </h2>
+
+            <p class="course-price__value">
+                24 000 ₽
+            </p>
+
+            <p class="course-price__description">
+                Полная стоимость обучения
+                продолжительностью 8 недель.
+            </p>
+
+            <a class="course-price__button button button_primary"
+               :href="checkout">
+                Записаться на курс
+            </a>
+
+        </section>
+
+        <section class="sidebar__section">
+
+            <h2 class="sidebar__title">
+                Формат обучения
+            </h2>
+
+            <ul class="sidebar__list">
+                <li class="sidebar__item">
+                    Онлайн-занятия
+                </li>
+                <li class="sidebar__item">
+                    Практические задания
+                </li>
+                <li class="sidebar__item">
+                    Поддержка наставника
+                </li>
+            </ul>
+
+        </section>
+
+    </aside>
+</template>
